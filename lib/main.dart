@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Weather',
+      title: 'Weather App',
       defaultTransition: Transition.native,
       transitionDuration: const Duration(
         milliseconds: 350,
@@ -49,7 +49,7 @@ class MyApp extends StatelessWidget {
         brightness: Brightness.light,
       ),
       getPages: AppRoutes().appRoutes,
-      initialRoute: AppRoutes.home,
+      initialRoute: AppRoutes.login,
       locale: Get.deviceLocale,
     );
   }

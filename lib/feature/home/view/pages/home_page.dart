@@ -65,6 +65,8 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final cityName = Get.arguments as String;
+
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -74,7 +76,7 @@ class HomePage extends StatelessWidget {
         centerTitle: true,
       ),
       body: FutureBuilder<WeatherModel>(
-        future: WeatherServices().getWeatherData(),
+        future: WeatherServices().getWeatherData(cityName),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
             return _loadingIndicator;
